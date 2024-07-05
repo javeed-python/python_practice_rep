@@ -51,3 +51,11 @@ car.show_details_pretty(wheels_type="Alloy", brakes="disk", sunroof="Yes", ADAS=
 # Your Hyudai vehicle started with Key manuallyart()
 Vehicle.fill_fuel(30)
 Vehicle.start()
+
+
+car_1 = Vehicle(name="Safari", company="Tata", model=2023,
+              type="4 wheeler", cost=2745000, fuel_type="diesel")
+car_1.show_details_pretty(wheels_type="Alloy", brakes="disk", sunroof="Yes", ADAS="Yes")
+car_1.fill_fuel(30)
+car_1.start()
+
