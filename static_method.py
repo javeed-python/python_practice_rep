@@ -43,10 +43,20 @@ class Vehicle:
     def example_method(integrated_app=False):
         if integrated_app:
             # observe you can't access instance properties/methods (self is unresolved)
-            print(f'Your {self.company} vehicle started with mobile app')
+            print(f'Your vehicle started with mobile app')
         else:
             # observe you can't access class properties/methods (cls is unresolved)
-            print(f'Your {cls.company} vehicle started with Key manually')
+            print(f'Your vehicle started with Key manually')
+
+    @staticmethod
+    # an example to show that instance members & class members can't be accessible
+    def open_sunroof(integrated_app=False):
+        if integrated_app:
+            # observe you can't access instance properties/methods (self is unresolved)
+            print(f'Your vehicle opened sunroof with mobile app')
+        else:
+            # observe you can't access class properties/methods (cls is unresolved)
+            print(f'Your  vehicle opened sunroof with manual button')
 
     # define class methods
     # class method can access class properties & methods
