@@ -1,0 +1,103 @@
+class A:
+    # define properties
+    a_prop_1 = "a_val1"
+    a_prop_2 = "a_val2"
+
+    def __init__(self):
+        print("class A object created")
+
+    # define methods
+    def a_method_1(self):
+        print("this is a_method_1")
+
+    def a_method_2(self):
+        print("this is a_method_2")
+
+    def details(self):
+        print(f"details of class A: {self.a_prop_1}, {self.a_prop_2}")
+
+
+class B(A):
+    # define properties
+    b_prop_1 = "b_val1"
+    b_prop_2 = "b_val2"
+
+    def __init__(self):
+        print("class B object created")
+
+    # define methods
+    def b_method_1(self):
+        print("this is b_method_1")
+
+    def b_method_2(self):
+        print("this is b_method_2")
+
+    def details(self):
+        print(f"details of class B: {self.b_prop_1}, {self.b_prop_2}")
+
+
+class C(A):
+    # define properties
+    c_prop_1 = "c_val1"
+    c_prop_2 = "c_val2"
+
+    def __init__(self):
+        print("class C object created")
+
+    # define methods
+    def c_method_1(self):
+        print("this is c_method_1")
+
+    def c_method_2(self):
+        print("this is c_method_2")
+
+    def details(self):
+        print(f"details of class C: {self.c_prop_1}, {self.c_prop_2}")
+
+
+class D(B, C):
+    # define properties
+    d_prop_1 = "d_val1"
+    d_prop_2 = "d_val2"
+
+    def __init__(self):
+        print("class D object created")
+
+    # define methods
+    def d_method_1(self):
+        print("this is d_method_1")
+
+    def d_method_2(self):
+        print("this is d_method_2")
+
+    def details(self):
+        print(f"details of class D: {self.d_prop_1}, {self.d_prop_2}")
+
+# class B object must have members of class A & B
+b_obj = B()
+print("\naccessing properties with b_obj:", b_obj.a_prop_1, b_obj.a_prop_2, b_obj.b_prop_1, b_obj.b_prop_2)
+print("\naccessing methods with b_obj")
+b_obj.a_method_1()
+b_obj.b_method_1()
+b_obj.details()
+
+# class C object must have members of class A & C
+c_obj = C()
+print("\naccessing properties with c_obj:", c_obj.a_prop_1, c_obj.a_prop_2, c_obj.c_prop_1, c_obj.c_prop_2)
+print("\naccessing methods with c_obj")
+c_obj.a_method_1()
+c_obj.c_method_1()
+c_obj.details()
+
+# class D object must have members of class A & B & A & C
+# even class B & C object will have class A members, the object of class D will have only
+# one copy of the class A members, i.e A & B & C
+d_obj = D()
+print("\naccessing properties with d_obj:", d_obj.a_prop_1, d_obj.a_prop_2, d_obj.b_prop_1, d_obj.b_prop_2,
+      d_obj.c_prop_1, d_obj.c_prop_2, d_obj.d_prop_1, d_obj.d_prop_2)
+print("\naccessing methods with d_obj")
+d_obj.a_method_1()
+d_obj.b_method_1()
+d_obj.c_method_1()
+d_obj.d_method_1()
+d_obj.details()
